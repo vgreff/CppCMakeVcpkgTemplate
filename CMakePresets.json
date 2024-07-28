@@ -1,5 +1,5 @@
 {
-    "version": 8,
+    "version": 6,
     "cmakeMinimumRequired": {
         "major": 3,
         "minor": 26,
@@ -26,7 +26,7 @@
             "displayName": "Ninja Multi-Config ",
             "cacheVariables": {
                 "CMAKE_C_COMPILER": "/opt/rh/gcc-toolset-12/root/usr/bin/gcc",
-                "CMAKE_CXX_COMPILER": "/opt/rh/gcc-toolset-12/root/usr/bin/g++",
+                "CMAKE_CXX_COMPILER": "/opt/rh/gcc-toolset-12/root/usr/bin/g++"
             },
             "inherits": ["ninja-multi-vcpkg-base"]
         }
