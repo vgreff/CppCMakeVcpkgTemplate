@@ -7,28 +7,12 @@
     },
     "configurePresets": [
         {
-            "name": "ninja-multi-vcpkg-base",
-            "displayName": "Ninja Multi-Config Base",
+            "name": "ninja-multi-vcpkg",
+            "displayName": "Ninja Multi-Config",
             "description": "Configure with vcpkg toolchain and generate Ninja project files for all configurations",
             "binaryDir": "${sourceDir}/builds/${presetName}",
             "generator": "Ninja Multi-Config",
             "toolchainFile": "${sourceDir}/vcpkg/scripts/buildsystems/vcpkg.cmake"
-        },
-        {
-            "name": "ninja-multi-vcpkg",
-            "description": "system compiler",
-            "displayName": "Ninja Multi-Config ",
-            "inherits": ["ninja-multi-vcpkg-base"]
-        },
-        {
-            "name": "ninja-multi-vcpkg-12",
-            "description": "NinjaMultiGcc12",
-            "displayName": "Ninja Multi-Config ",
-            "cacheVariables": {
-                "CMAKE_C_COMPILER": "/opt/rh/gcc-toolset-12/root/usr/bin/gcc",
-                "CMAKE_CXX_COMPILER": "/opt/rh/gcc-toolset-12/root/usr/bin/g++",
-            },
-            "inherits": ["ninja-multi-vcpkg-base"]
         }
     ],
     "buildPresets": [
@@ -52,6 +36,12 @@
             "displayName": "Build (RelWithDebInfo )",
             "description": "Build with Ninja/vcpkg (RelWithDebInfo )",
             "configuration": "RelWithDebInfo"
+        },
+        {
+            "name": "ninja-vcpkg",
+            "configurePreset": "ninja-multi-vcpkg",
+            "displayName": "Build",
+            "description": "Build with Ninja/vcpkg"
         }
     ],
     "testPresets": [
@@ -70,7 +60,7 @@
             ]
         },
         {
-            "name": "test-RelWithDebInfo",
+            "name": "test-RelWithDebInfo ",
             "description": "Test (RelWithDebInfo )",
             "displayName": "Test (RelWithDebInfo )",
             "configuration": "RelWithDebInfo",
@@ -87,5 +77,5 @@
                 "test-ninja-vcpkg"
             ]
         }
-]
+    ]
 }
